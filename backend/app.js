@@ -10,8 +10,9 @@ const router = require("./routes/router")
 const port = 8080
 
 app.use(express.json())
-app.use(router)
 app.use(cors())
+app.use(router)
+
 
 //static path
 

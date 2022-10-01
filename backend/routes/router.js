@@ -17,7 +17,7 @@ const imgconfig = multer.diskStorage({
 });
 
 const isImage = (req, file, callback) => {
-  if (file.mimetype.startswith("image")) {
+  if (file.mimetype.startsWith("image")) {
     callback(null, true);
   } else {
     callback(new Error("Only Images are allowed"));
@@ -50,7 +50,7 @@ router.post("/register", upload.single("photo"), async (req, res) => {
 
   } catch (err) {
 
-    res.status(401).json({ status: 401, err });
+    // res.status(401).json({ status: 401, err });
     
   }
 });
