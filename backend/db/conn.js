@@ -1,8 +1,5 @@
 const mongoose = require("mongoose");
 
-// const DB =
-//   "mongodb+srv://Octopus:octopus@cluster0.fmfphvh.mongodb.net/ImageUpload?retryWrites=true&w=majority";
-
 mongoose
   .connect(process.env.DB, {
     useUnifiedTopology: true,
