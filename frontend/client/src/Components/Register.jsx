@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import {useNavigate} from 'react-router-dom'
 import axios from 'axios'
 
 const Register = () => {
+  const history = useNavigate()
   const [fname, setFName] = useState("");
   const [file, setFile] = useState("");
 
@@ -31,7 +33,13 @@ const Register = () => {
     }
 
     const res = await axios.post("http://localhost:8080/register",formdata,config)
-    console.log(res)
+    // console.log(res)
+    if(!res.data || res.data.status ===401){
+      console.log("error")
+    }
+    else {
+      history('/')
+    }
   };
   return (
     <div>
